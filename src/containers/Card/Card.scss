@@ -1,0 +1,79 @@
+.card{
+  margin-bottom: 40px;
+  .descriptionContainer{
+    padding: 7px 10px;
+    border: 1px solid #ccc;
+    border-top: 0;
+  }
+  .title{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ef8400;
+  }
+  .description{
+    font-size: 12px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #707070;
+  }
+  img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .autor-image{
+    width: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  .author-container{
+    padding: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .authorName{
+    font-size: 12px;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #707070;
+    strong{
+      font-weight: 500;
+    }
+  }
+  .likeAndShareContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    .button{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 33.333333%;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #ef8400;
+      height: 40px;
+      border-right: 1px solid #ccc;
+      transition: all 0.3s ease;
+      &:hover{
+        background-color: #ef8400;
+        color: #fff;
+        border-color: #ef8400;
+      }
+      &:last-child{
+        border-right: 0;
+      }
+    }
+  }
+}

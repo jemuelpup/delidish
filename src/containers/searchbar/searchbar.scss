@@ -1,0 +1,25 @@
+.searchbar-form{
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  .searchbarField{
+    width: 200px;
+    border: 1px solid #fff;
+    &:focus{
+      outline: 0;
+    }
+  }
+  .submitSearchBtn{
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+  g{
+    stroke: #fff;
+  }
+}

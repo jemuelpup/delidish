@@ -1,0 +1,27 @@
+.header{
+  background-color: orange;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding: 0 20px;
+  p,li{
+    color: #fff;
+  }
+  .wrapInner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+  }
+}
+.navigationList{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  li{
+    margin-left: 20px;
+  }
+}
+
+.logoContainer{
+
+}

@@ -1,0 +1,10 @@
+.cardList{
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  li{
+    padding: 10px;
+    width: 33.33%;
+  }
+}

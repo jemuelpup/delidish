@@ -1,0 +1,20 @@
+.sectionTitle{
+  font-size: 32px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #c12525;
+  text-align: center;
+  padding: 45px 0;
+  position: relative;
+  &:after{
+    content: "";
+    display: block;
+    width: 70px;
+    border-bottom: 3px solid orange;
+    margin: 10px auto 0;
+  }
+}
+.featuredRecipes{
+  margin-bottom: 30px;
+}
