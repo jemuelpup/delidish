@@ -1,0 +1,56 @@
+.instructionContainer{
+    padding-top: 30px;
+}
+.instructionContent{
+    border: 1px solid #dadada;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    h2{
+        font-size: 28px;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 20px;
+        &:after{
+            margin-left: 0;
+        }
+    }
+    li{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        margin-bottom: 5px;
+        margin-bottom: 20px;
+    }
+    .amount{
+        margin-left: 20px;
+    }
+}
+.ingredientsContainer{
+    ul{
+        max-width: 400px;
+    }
+    li{
+        position: relative;
+        padding-left: 20px;
+        &:after{
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: orange;
+            border-radius: 100%;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.procedures-container{
+    li{
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+}
