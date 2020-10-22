@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const weatherLink = `http://api.openweathermap.org/data/2.5/forecast?appid=${process.env.COUNTRY}`;
+const weatherLink = `http://api.openweathermap.org/data/2.5/forecast?appid=${process.env.WEATHER_API_KEY}`;
 const countryCode = "PH";
 // let linkName = `${weatherLink}?q=philippines&appid=${weatherapikey}`
 
