@@ -29,8 +29,7 @@ export default function(state = INITIAL_STATE, action){
         ...state,
         all: action.payload
       }
-      
-
+    
     default:
       return state;
   }

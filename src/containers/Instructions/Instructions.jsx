@@ -1,7 +1,28 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import './Instructions.scss';
+import { getRecipeDetails } from '../../actions/recipe_actions';
 
 class Instructions extends Component{
+    constructor(props){
+		super(props);
+		this.props.getRecipeDetails();
+	}
+    renderIngredients = details => {
+        return details.ingredients ? 
+            details.ingredients.map(ingredient=><li key={ingredient.id}><span className="name">{ingredient.name}</span><span className="amount">{ingredient.amount}</span></li>)
+        : "";
+    }
+    renderProcedure = details => {
+        return details.procedures ? 
+            details.procedures.map((procedure, index)=>
+                <li key={procedure.id}>
+                    <span className="step">Step {index}</span>
+                    <p>{ procedure.instruction }</p>
+                </li>
+            )
+        : "";
+    }
     render(){
         return (
             <div className="wrapper">
@@ -10,21 +31,13 @@ class Instructions extends Component{
                         <div className='ingredientsContainer instructionContent'>
                             <h2 className='instruction-header sectionTitle'>Ingredients</h2>
                             <ul>
-                                <li><span className="name">Chicken</span><span className="amount">1/4 kilo</span></li>
-                                <li><span className="name">Soysouce</span><span className="amount">1/2 Cup</span></li>
-                                <li><span className="name">Vinegar</span><span className="amount">2tbsp</span></li>
-                                <li><span className="name">Pepper</span><span className="amount">1tsp</span></li>
-                                <li><span className="name">Leaves</span><span className="amount">3pcs</span></li>
+                                {this.renderIngredients(this.props.recipeDetails)}
                             </ul>
                         </div>
                         <div className='proceduresContainer instructionContent'>
                             <h2 className='instruction-header sectionTitle'>Procedures</h2>
                             <ul>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, odio. Porro error quae architecto molestias debitis similique consequatur qui eveniet? Rerum voluptates mollitia ipsam minus numquam, temporibus excepturi! Autem, dolore.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, odio. Porro error quae architecto molestias debitis similique consequatur qui eveniet? Rerum voluptates mollitia ipsam minus numquam, temporibus excepturi! Autem, dolore.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, odio. Porro error quae architecto molestias debitis similique consequatur qui eveniet? Rerum voluptates mollitia ipsam minus numquam, temporibus excepturi! Autem, dolore.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, odio. Porro error quae architecto molestias debitis similique consequatur qui eveniet? Rerum voluptates mollitia ipsam minus numquam, temporibus excepturi! Autem, dolore.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, odio. Porro error quae architecto molestias debitis similique consequatur qui eveniet? Rerum voluptates mollitia ipsam minus numquam, temporibus excepturi! Autem, dolore.</li>
+                                {this.renderProcedure(this.props.recipeDetails)}
                             </ul>
                         </div>
                     </div>
@@ -33,5 +46,8 @@ class Instructions extends Component{
         )
     }
 }
+function mapStateToProps({recipeDetails}){
+	return { recipeDetails }
+}
 
-export default Instructions
+export default connect(mapStateToProps,{getRecipeDetails})(Instructions)
